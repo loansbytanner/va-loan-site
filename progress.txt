@@ -70,3 +70,6 @@
 [2026-03-12 08:42] [STORY_17] [STARTED] Write blog post 8: VA Loan Property Requirements
 [2026-03-12 08:46] [STORY_17] [COMPLETED] Wrote 2054-word VA Property Requirements guide
 [2026-03-12 08:46] [STORY_18] [COMPLETED] Wrote 2045-word VA Closing Costs Breakdown
+[2026-03-12 08:47M] [STATUS] 18 stories complete. 9 blog posts written. Continuing Stories 19-22 (4 more blog posts).
+[2026-03-12 08:53] [STORY_19] [COMPLETED] Wrote ~2000-word VA Loan Limits/Entitlement guide
+[2026-03-12 08:53] [STORY_20] [COMPLETED] Wrote 2020-word VA Investment Property/House Hacking guide

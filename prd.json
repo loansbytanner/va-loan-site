@@ -420,8 +420,9 @@
         "Word count check (2000+ words)"
       ],
       "files_likely_affected": ["data/posts.json"],
-      "status": "pending",
-      "notes": "Depends on Story 8. Post-2020: No loan limits with full entitlement. Partial entitlement still has county limits. Can have multiple VA loans (one for each property). Restoration of entitlement rules."
+      "status": "completed",
+      "completed_at": "2026-03-12T17:15:00Z",
+      "notes": "~2000 words. Full vs partial entitlement, Blue Water Navy Act, multiple VA loans, restoration, real scenarios."
     },
     {
       "id": 20,
@@ -438,8 +439,9 @@
         "Word count check (2000+ words)"
       ],
       "files_likely_affected": ["data/posts.json"],
-      "status": "pending",
-      "notes": "Depends on Story 8. VA requires owner occupancy (60 days). House hack: buy 2-4 unit, live in one, rent others. After PCS can rent previous home and get new VA loan. Can restore entitlement after selling."
+      "status": "completed",
+      "completed_at": "2026-03-12T17:15:00Z",
+      "notes": "2020 words. House hacking, PCS strategy, portfolio building, real examples, landlording basics, objection handling."
     },
     {
       "id": 21,
