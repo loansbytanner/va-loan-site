@@ -382,8 +382,9 @@
         "Word count check (2000+ words)"
       ],
       "files_likely_affected": ["data/posts.json"],
-      "status": "pending",
-      "notes": "Depends on Story 8. MPRs: safe, sanitary, structurally sound. Common issues: peeling paint, roof damage, HVAC problems. Condo must be VA-approved. Multi-family up to 4 units allowed."
+      "status": "completed",
+      "completed_at": "2026-03-12T16:55:00Z",
+      "notes": "2054 words. MPRs, common issues, condo approval, multi-family, manufactured homes, rural properties, working around issues."
     },
     {
       "id": 18,
@@ -400,8 +401,9 @@
         "Word count check (2000+ words)"
       ],
       "files_likely_affected": ["data/posts.json"],
-      "status": "pending",
-      "notes": "Depends on Story 8. VA prohibits certain fees: attorney fees in some states, prepayment penalties. Typical costs: funding fee, appraisal, title, recording. Seller can pay up to 4% concessions."
+      "status": "completed",
+      "completed_at": "2026-03-12T16:55:00Z",
+      "notes": "2045 words. Allowed vs prohibited fees, 1% cap, seller concessions, real examples, hidden costs, title insurance, prepaids."
     },
     {
       "id": 19,
