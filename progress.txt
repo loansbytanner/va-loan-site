@@ -38,3 +38,8 @@
 [2026-03-12 22:44] [STORY_7] [PROGRESS] Created API route with webhook, spam protection, rate limiting
 [2026-03-12 22:45] [STORY_6] [COMPLETED] Contact form and thank you page verified
 [2026-03-12 22:45] [STORY_7] [COMPLETED] API route with webhook integration complete
+[2026-03-12 22:46] [STORY_8] [STARTED] Build blog infrastructure
+[2026-03-12 22:50] [STORY_8] [PROGRESS] Created types, storage, posts library
+[2026-03-12 22:52] [STORY_8] [PROGRESS] Created schema generators (Article, FAQ, HowTo)
+[2026-03-12 22:54] [STORY_8] [PROGRESS] Created BlogCard, BlogPost components
+[2026-03-12 22:55] [STORY_8] [COMPLETED] Blog infrastructure complete

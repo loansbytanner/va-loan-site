@@ -211,8 +211,9 @@
         "Visit /blog and verify listing works"
       ],
       "files_likely_affected": ["lib/blog/types.ts", "lib/blog/storage.ts", "lib/blog/posts.ts", "app/blog/page.tsx", "app/blog/[slug]/page.tsx", "data/posts.json"],
-      "status": "pending",
-      "notes": "Depends on Story 2. Follow same pattern as DSCR site blog. Include: ArticleSchema, BreadcrumbSchema, FAQSchema generation. Support markdown content with heading parsing."
+      "status": "completed",
+      "completed_at": "2026-03-12T22:55:00Z",
+      "notes": "Blog infrastructure with types, storage, posts library, schema generation (Article, Breadcrumb, FAQ, HowTo), BlogCard, BlogPost components, and blog pages."
     },
     {
       "id": 9,
