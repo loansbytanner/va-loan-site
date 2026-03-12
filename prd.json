@@ -287,8 +287,9 @@
         "Word count check (2000+ words)"
       ],
       "files_likely_affected": ["data/posts.json"],
-      "status": "pending",
-      "notes": "Depends on Story 8. Highlight: 0% down, no PMI, competitive rates, no prepayment penalty. Include real cost savings examples. Use GEO-optimized statistics with sources."
+      "status": "completed",
+      "completed_at": "2026-03-12T15:55:00Z",
+      "notes": "2145 words comparing VA vs conventional on all key factors. Real $400K home cost comparison shows $33,500+ savings. Covers when conventional might make sense."
     },
     {
       "id": 13,
