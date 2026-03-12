@@ -344,8 +344,9 @@
         "Word count check (2000+ words)"
       ],
       "files_likely_affected": ["data/posts.json"],
-      "status": "pending",
-      "notes": "Depends on Story 8. VA allows up to 100% LTV cash-out (conventional typically 80%). Can also use to convert conventional to VA. Include use cases: debt consolidation, home improvement, investment."
+      "status": "completed",
+      "completed_at": "2026-03-12T16:35:00Z",
+      "notes": "2014 words. 100% LTV advantage, HELOC comparison, step-by-step process, smart uses for funds, warning signs."
     },
     {
       "id": 16,
@@ -362,8 +363,9 @@
         "Word count check (2000+ words)"
       ],
       "files_likely_affected": ["data/posts.json"],
-      "status": "pending",
-      "notes": "Depends on Story 8. Steps: 1) Get COE, 2) Get pre-approved, 3) Find VA-savvy agent, 4) House hunt, 5) Make offer, 6) Appraisal, 7) Underwriting, 8) Close. Include timeline expectations."
+      "status": "completed",
+      "completed_at": "2026-03-12T16:35:00Z",
+      "notes": "2047 words. Complete 9-step process from readiness through closing, timeline, mistakes to avoid, team building, first year of ownership."
     },
     {
       "id": 17,

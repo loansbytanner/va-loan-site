@@ -62,3 +62,7 @@
 [2026-03-12 08:33] [STORY_13] [COMPLETED] Wrote 2044-word VA Funding Fee guide with exemptions and 2024 rates
 [2026-03-12 08:34] [STORY_14] [STARTED] Write blog post 5: VA IRRRL Streamline Refinance Guide
 [2026-03-12 08:36] [STORY_14] [COMPLETED] Wrote 2063-word VA IRRRL Streamline Refinance guide
+[2026-03-12 08:36] [STORY_15] [STARTED] Write blog post 6: VA Cash-Out Refinance Complete Guide
+[2026-03-12 08:36] [STORY_16] [STARTED] Write blog post 7: VA Loan for First-Time Homebuyers
+[2026-03-12 08:41] [STORY_15] [COMPLETED] Wrote 2014-word VA Cash-Out Refinance guide
+[2026-03-12 08:41] [STORY_16] [COMPLETED] Wrote 2047-word First-Time Homebuyers guide
