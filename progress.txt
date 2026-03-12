@@ -60,3 +60,5 @@
 [2026-03-12 08:31] [STORY_12] [COMPLETED] All acceptance criteria verified - clear VA advantage shown
 [2026-03-12 08:31] [STORY_13] [STARTED] Write blog post 4: VA Funding Fee Explained
 [2026-03-12 08:33] [STORY_13] [COMPLETED] Wrote 2044-word VA Funding Fee guide with exemptions and 2024 rates
+[2026-03-12 08:34] [STORY_14] [STARTED] Write blog post 5: VA IRRRL Streamline Refinance Guide
+[2026-03-12 08:36] [STORY_14] [COMPLETED] Wrote 2063-word VA IRRRL Streamline Refinance guide
