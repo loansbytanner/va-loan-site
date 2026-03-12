@@ -230,8 +230,9 @@
         "Verify table of contents navigation"
       ],
       "files_likely_affected": ["components/blog/BlogPost.tsx", "components/blog/TableOfContents.tsx", "components/blog/BlogCard.tsx"],
-      "status": "pending",
-      "notes": "Depends on Story 8. Style for readability - generous line height, proper paragraph spacing. Include TL;DR section at top for GEO optimization."
+      "status": "completed",
+      "completed_at": "2026-03-12T15:25:00Z",
+      "notes": "Created TableOfContents component with IntersectionObserver for active heading tracking. Updated BlogPost with sidebar layout for TOC on desktop. TL;DR section already present."
     },
     {
       "id": 10,

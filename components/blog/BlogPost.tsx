@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Clock, ArrowLeft, User } from 'lucide-react';
 import { BlogPost as BlogPostType, CATEGORY_LABELS } from '@/lib/blog/types';
+import TableOfContents from './TableOfContents';
 
 interface BlogPostProps {
   post: BlogPostType;
@@ -136,52 +137,62 @@ export default function BlogPost({ post }: BlogPostProps) {
         </div>
       </header>
 
-      {/* Content */}
-      <div className="mx-auto max-w-4xl px-4 py-12 lg:py-16">
-        {/* TL;DR Box */}
-        <div className="bg-cream border-l-4 border-gold-primary p-6 rounded-r-lg mb-10">
-          <h2 className="text-sm font-bold text-gold-primary uppercase tracking-wider mb-2">TL;DR</h2>
-          <p className="text-navy-deep font-medium">{post.description}</p>
-        </div>
+      {/* Content with TOC Sidebar */}
+      <div className="mx-auto max-w-7xl px-4 py-12 lg:py-16">
+        <div className="lg:flex lg:gap-12">
+          {/* Main Content */}
+          <div className="lg:flex-1 max-w-4xl">
+            {/* TL;DR Box */}
+            <div className="bg-cream border-l-4 border-gold-primary p-6 rounded-r-lg mb-10">
+              <h2 className="text-sm font-bold text-gold-primary uppercase tracking-wider mb-2">TL;DR</h2>
+              <p className="text-navy-deep font-medium">{post.description}</p>
+            </div>
 
-        {/* Article Content */}
-        <div className="prose prose-lg max-w-none">
-          {renderContent(post.content)}
-        </div>
+            {/* Article Content */}
+            <div className="prose prose-lg max-w-none">
+              {renderContent(post.content)}
+            </div>
 
-        {/* Tags */}
-        {post.tags && post.tags.length > 0 && (
-          <div className="mt-12 pt-8 border-t border-gray-200">
-            <h3 className="text-sm font-semibold text-slate-dark uppercase tracking-wider mb-3">
-              Related Topics
-            </h3>
-            <div className="flex flex-wrap gap-2">
-              {post.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="px-3 py-1 text-sm bg-gray-100 text-slate-dark rounded-full"
-                >
-                  {tag}
-                </span>
-              ))}
+            {/* Tags */}
+            {post.tags && post.tags.length > 0 && (
+              <div className="mt-12 pt-8 border-t border-gray-200">
+                <h3 className="text-sm font-semibold text-slate-dark uppercase tracking-wider mb-3">
+                  Related Topics
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {post.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-3 py-1 text-sm bg-gray-100 text-slate-dark rounded-full"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* CTA */}
+            <div className="mt-12 bg-navy-deep rounded-2xl p-8 text-center">
+              <h3 className="text-2xl font-bold text-white mb-3">
+                Ready to Get Your VA Loan?
+              </h3>
+              <p className="text-white/70 mb-6">
+                We underwrite directly to VA guidelines with no lender overlays.
+              </p>
+              <Link
+                href="/#quiz"
+                className="inline-flex items-center gap-2 px-8 py-3 bg-gold-primary text-navy-deep font-semibold rounded-full hover:bg-gold-light transition-colors"
+              >
+                Get Pre-Qualified Now
+              </Link>
             </div>
           </div>
-        )}
 
-        {/* CTA */}
-        <div className="mt-12 bg-navy-deep rounded-2xl p-8 text-center">
-          <h3 className="text-2xl font-bold text-white mb-3">
-            Ready to Get Your VA Loan?
-          </h3>
-          <p className="text-white/70 mb-6">
-            We underwrite directly to VA guidelines with no lender overlays.
-          </p>
-          <Link
-            href="/#quiz"
-            className="inline-flex items-center gap-2 px-8 py-3 bg-gold-primary text-navy-deep font-semibold rounded-full hover:bg-gold-light transition-colors"
-          >
-            Get Pre-Qualified Now
-          </Link>
+          {/* Sidebar with TOC - Desktop Only */}
+          <aside className="hidden lg:block w-72 flex-shrink-0">
+            <TableOfContents content={post.content} />
+          </aside>
         </div>
       </div>
     </article>
