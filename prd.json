@@ -116,8 +116,9 @@
         "Verify trust badges/indicators are visible"
       ],
       "files_likely_affected": ["app/page.tsx", "components/Hero.tsx"],
-      "status": "pending",
-      "notes": "Depends on Story 2. Hero should evoke respect and gratitude for veterans. Use subtle military imagery (not tacky). Include American flag colors subtly."
+      "status": "completed",
+      "completed_at": "2026-03-12T22:25:00Z",
+      "notes": "Hero with tagline, 2 CTAs (Get Pre-Qualified, Learn About VA Loans), 3 trust indicators, quick stats, social proof section."
     },
     {
       "id": 4,
