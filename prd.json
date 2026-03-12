@@ -249,8 +249,9 @@
         "Check SEO meta tags and schema"
       ],
       "files_likely_affected": ["data/posts.json"],
-      "status": "pending",
-      "notes": "Depends on Story 8. Topics: COE (Certificate of Eligibility), service requirements by era, reserve/guard requirements, surviving spouse eligibility. Include FAQ section for schema. Use GEO optimization techniques."
+      "status": "completed",
+      "completed_at": "2026-03-12T15:35:00Z",
+      "notes": "2145 words covering COE, service requirements by era (WWII-present), discharge status rules, Guard/Reserve eligibility, surviving spouse benefits, and FAQ section. Human-readable conversational tone."
     },
     {
       "id": 11,

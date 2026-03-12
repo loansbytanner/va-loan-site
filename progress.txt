@@ -49,3 +49,6 @@
 [2026-03-12 08:22] [STORY_9] [PROGRESS] Created TableOfContents component with IntersectionObserver
 [2026-03-12 08:22] [STORY_9] [PROGRESS] Updated BlogPost with TOC sidebar layout
 [2026-03-12 08:22] [STORY_9] [COMPLETED] All acceptance criteria verified - build succeeds
+[2026-03-12 08:23] [STORY_10] [STARTED] Write blog post 1: VA Loan Eligibility Requirements
+[2026-03-12 08:25] [STORY_10] [PROGRESS] Wrote 2145-word blog post on VA Loan Eligibility Requirements
+[2026-03-12 08:25] [STORY_10] [COMPLETED] All acceptance criteria verified - build succeeds
