@@ -154,8 +154,9 @@
         "Verify progress bar updates correctly"
       ],
       "files_likely_affected": ["components/VALoanQuiz.tsx"],
-      "status": "pending",
-      "notes": "Depends on Story 2. Quiz questions: 1) Loan purpose (purchase/refi/cash-out/IRRRL), 2) Property state, 3) Credit score (ranges including below 620), 4) Estimated loan amount, 5) Property type, 6) Military branch, 7) Service status (active/veteran/reserve/spouse), 8) Already have property in mind?"
+      "status": "completed",
+      "completed_at": "2026-03-12T22:40:00Z",
+      "notes": "8-step quiz: loan purpose, service status, branch, state, property type, property interest, credit score, loan amount. Auto-advance with animations, progress bar."
     },
     {
       "id": 6,
