@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+:root {
+  /* Military-Inspired VA Loan Color Palette */
+  --background: #FDFCF9;
+  --foreground: #0A1628;
+
+  /* Primary Colors */
+  --navy-deep: #0A1628;
+  --navy-medium: #1A2D47;
+  --navy-light: #2A4365;
+
+  /* Accent Colors */
+  --gold-primary: #D4A84B;
+  --gold-light: #E4C87B;
+  --gold-dark: #B8923F;
+
+  /* Military Green */
+  --od-green: #556B2F;
+  --od-green-light: #6B8E23;
+  --od-green-dark: #4A5D28;
+
+  /* Neutrals */
+  --cream: #F5F5DC;
+  --cream-light: #FDFCF9;
+  --slate-dark: #4A5568;
+  --slate-light: #718096;
+
+  /* Semantic */
+  --success: #38A169;
+  --error: #E53E3E;
+  --warning: #D69E2E;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* Navy palette */
+  --color-navy-deep: var(--navy-deep);
+  --color-navy-medium: var(--navy-medium);
+  --color-navy-light: var(--navy-light);
+
+  /* Gold palette */
+  --color-gold-primary: var(--gold-primary);
+  --color-gold-light: var(--gold-light);
+  --color-gold-dark: var(--gold-dark);
+
+  /* OD Green palette */
+  --color-od-green: var(--od-green);
+  --color-od-green-light: var(--od-green-light);
+  --color-od-green-dark: var(--od-green-dark);
+
+  /* Neutral palette */
+  --color-cream: var(--cream);
+  --color-cream-light: var(--cream-light);
+  --color-slate-dark: var(--slate-dark);
+  --color-slate-light: var(--slate-light);
+
+  /* Semantic colors */
+  --color-success: var(--success);
+  --color-error: var(--error);
+  --color-warning: var(--warning);
+
+  /* Fonts */
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Custom Utilities */
+.text-gradient-gold {
+  background: linear-gradient(135deg, var(--gold-primary), var(--gold-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bg-gradient-navy {
+  background: linear-gradient(135deg, var(--navy-deep), var(--navy-medium));
+}
+
+.bg-gradient-hero {
+  background: linear-gradient(180deg, var(--navy-deep) 0%, var(--navy-medium) 50%, var(--navy-light) 100%);
+}
+
+/* Button hover glow effect */
+.btn-glow {
+  box-shadow: 0 0 0 0 rgba(212, 168, 75, 0);
+  transition: box-shadow 0.3s ease;
+}
+
+.btn-glow:hover {
+  box-shadow: 0 0 20px 2px rgba(212, 168, 75, 0.4);
+}
+
+/* Grid pattern background */
+.grid-pattern {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--gold-primary);
+  outline-offset: 2px;
+}
+
+/* Selection colors */
+::selection {
+  background: var(--gold-primary);
+  color: var(--navy-deep);
+}

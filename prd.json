@@ -1,0 +1,714 @@
+{
+  "project": "VA Loan Lead Funnel - Cornerstone First Mortgage",
+  "version": "1.0.0",
+  "created": "2026-03-12T22:00:00Z",
+  "description": "A VA loan lead generation website for Cornerstone First Mortgage. Features a quiz funnel, 20 SEO-optimized blog posts, veteran appreciation messaging, and direct-to-VA-guidelines underwriting. Theme: 'They served for us, now we serve them.'",
+  "tech_stack": {
+    "language": "TypeScript",
+    "framework": "Next.js 16+ with App Router",
+    "key_dependencies": ["tailwindcss", "react-hook-form", "zod", "lucide-react", "resend"]
+  },
+  "tech_context": {
+    "runtime": "Node.js",
+    "framework": "Next.js",
+    "detected_patterns": ["form_handling", "webhook_integration", "blog_system", "quiz_funnel", "seo_optimization", "geo_optimization"],
+    "platforms": ["windows"]
+  },
+  "interview_summary": {
+    "technical_decisions": [
+      "Lead webhook: POST to https://cbmtautos.duckdns.org/webhook/tanner-dscr-leads",
+      "Quiz captures: state, credit score, loan amount, loan purpose, property type, property address interest, military branch, service status",
+      "Blog posts: 20 posts, 2000+ words each, stored in data/posts.json",
+      "Color scheme: Military-inspired - Navy (#0A1628), OD Green (#556B2F), Gold (#D4A84B), Cream (#F5F5DC)",
+      "No VA loan overlays - we underwrite direct to VA guidelines (no 620 FICO requirement)",
+      "In-house underwriting team specializing in VA loans",
+      "GEO optimization: Use /geo-content-optimizer and /seo-geo skills for AI citability",
+      "Design: Slick, modern, Google Ads ready with strong CTAs"
+    ],
+    "tradeoffs": [
+      "Blog posts written in authentic human voice - no AI-sounding content",
+      "Veteran appreciation focus over hard sell tactics",
+      "Trust-building content over aggressive conversion tactics"
+    ],
+    "edge_cases": [
+      "Low credit score veterans - we CAN help them unlike most lenders",
+      "Complex VA eligibility scenarios (surviving spouse, reservists, etc.)",
+      "VA funding fee exemptions for disabled veterans"
+    ],
+    "constraints": [
+      "NMLS disclosure required in footer",
+      "Must be compliant with VA advertising guidelines",
+      "No false claims about rates or approval guarantees",
+      "All content must honor veterans appropriately"
+    ]
+  },
+  "brand_messaging": {
+    "tagline": "They Served For Us. Now We Serve Them.",
+    "value_props": [
+      "No VA overlays - we underwrite directly to VA guidelines",
+      "No minimum credit score requirements like other lenders (no 620 overlay)",
+      "In-house underwriting team specializing in VA loans",
+      "We serve those who served - veteran appreciation",
+      "Fast closings with dedicated VA loan specialists"
+    ],
+    "tone": "Respectful, grateful, professional, trustworthy, no-nonsense"
+  },
+  "verification_strategy": {
+    "smoke_test": "Visit homepage, complete quiz funnel with test data, verify lead posts to webhook, check blog posts render correctly, run Lighthouse audit",
+    "checkpoints": {
+      "server": "Lead webhook receives POST with all quiz data",
+      "client": "Quiz completes without errors, thank you page shows",
+      "visual": "Homepage displays veteran appreciation messaging, quiz is prominent",
+      "integration": "All 20 blog posts render, SEO meta tags present"
+    }
+  },
+  "stories": [
+    {
+      "id": 1,
+      "title": "Initialize Next.js project with Tailwind",
+      "description": "As a developer, I want to initialize a Next.js 16+ project with Tailwind CSS so that I have a foundation for the VA loan website.",
+      "acceptance_criteria": [
+        "Given I run npm install, when dependencies install, then no errors occur",
+        "Given the project, when I run npm run dev, then the dev server starts on localhost:3000",
+        "Given Tailwind config, when I check colors, then military-inspired palette is configured (Navy #0A1628, OD Green #556B2F, Gold #D4A84B, Cream #F5F5DC)"
+      ],
+      "verification_steps": [
+        "Run npm install and verify success",
+        "Run npm run dev and verify server starts",
+        "Check tailwind.config.ts for correct colors"
+      ],
+      "files_likely_affected": ["package.json", "tailwind.config.ts", "app/layout.tsx", "app/globals.css"],
+      "status": "completed",
+      "completed_at": "2026-03-12T22:15:00Z",
+      "notes": "Next.js 16.1.6 initialized with Tailwind CSS. Military color palette configured in globals.css. Dependencies: react-hook-form, zod, lucide-react, resend installed."
+    },
+    {
+      "id": 2,
+      "title": "Create shared UI components",
+      "description": "As a developer, I want reusable UI components so that the site maintains visual consistency.",
+      "acceptance_criteria": [
+        "Given Button component, when rendered, then it displays with gold/navy styling and hover states",
+        "Given Header component, when rendered, then it shows logo placeholder, navigation, and CTA button",
+        "Given Footer component, when rendered, then it displays NMLS disclosure, contact info, and links"
+      ],
+      "verification_steps": [
+        "Render each component in isolation",
+        "Verify consistent styling across components",
+        "Check Footer for NMLS disclosure text"
+      ],
+      "files_likely_affected": ["components/ui/Button.tsx", "components/Header.tsx", "components/Footer.tsx"],
+      "status": "pending",
+      "notes": "Depends on Story 1. Components should reflect military appreciation theme with respectful, professional styling."
+    },
+    {
+      "id": 3,
+      "title": "Build homepage hero section",
+      "description": "As a veteran visitor, I want to see an impactful hero section so that I immediately understand this site serves veterans like me.",
+      "acceptance_criteria": [
+        "Given I visit the homepage, when it loads, then I see 'They Served For Us. Now We Serve Them.' messaging",
+        "Given the hero, when I view it, then I see a prominent CTA to start the loan quiz",
+        "Given the hero, when I view it, then I see trust indicators (VA approved, no overlays, in-house underwriting)"
+      ],
+      "verification_steps": [
+        "Visit homepage and verify hero messaging",
+        "Verify CTA button is prominent and links to quiz",
+        "Verify trust badges/indicators are visible"
+      ],
+      "files_likely_affected": ["app/page.tsx", "components/Hero.tsx"],
+      "status": "pending",
+      "notes": "Depends on Story 2. Hero should evoke respect and gratitude for veterans. Use subtle military imagery (not tacky). Include American flag colors subtly."
+    },
+    {
+      "id": 4,
+      "title": "Build value proposition sections",
+      "description": "As a veteran visitor, I want to see why Cornerstone is different so that I trust them with my VA loan.",
+      "acceptance_criteria": [
+        "Given the homepage, when I scroll, then I see 'No VA Overlays' section explaining we underwrite direct to VA guidelines",
+        "Given the homepage, when I scroll, then I see 'In-House VA Experts' section about our specialized team",
+        "Given the homepage, when I scroll, then I see 'We Accept Low Credit' section explaining no 620 FICO requirement"
+      ],
+      "verification_steps": [
+        "Scroll homepage and verify all value prop sections exist",
+        "Verify each section clearly explains the benefit",
+        "Verify content is veteran-focused, not salesy"
+      ],
+      "files_likely_affected": ["app/page.tsx", "components/ValueProps.tsx", "components/NoOverlays.tsx"],
+      "status": "pending",
+      "notes": "Depends on Story 3. Key differentiator: Most lenders add 620 FICO overlay - we don't. Explain what overlays are and why ours is better."
+    },
+    {
+      "id": 5,
+      "title": "Create VA loan quiz funnel component",
+      "description": "As a veteran, I want to answer questions about my loan needs so that I can get personalized assistance.",
+      "acceptance_criteria": [
+        "Given I start the quiz, when I progress, then I see questions for: loan purpose, property state, credit score range, loan amount needed, property type, service branch, active/veteran status, property interest",
+        "Given each question, when I select an answer, then I auto-advance to next question with animation",
+        "Given the quiz, when I view it, then I see progress indicator showing completion percentage"
+      ],
+      "verification_steps": [
+        "Start quiz and verify all questions appear in sequence",
+        "Verify auto-advance on selection works",
+        "Verify progress bar updates correctly"
+      ],
+      "files_likely_affected": ["components/VALoanQuiz.tsx"],
+      "status": "pending",
+      "notes": "Depends on Story 2. Quiz questions: 1) Loan purpose (purchase/refi/cash-out/IRRRL), 2) Property state, 3) Credit score (ranges including below 620), 4) Estimated loan amount, 5) Property type, 6) Military branch, 7) Service status (active/veteran/reserve/spouse), 8) Already have property in mind?"
+    },
+    {
+      "id": 6,
+      "title": "Create quiz contact form and submission",
+      "description": "As a veteran, I want to submit my contact info after completing the quiz so that Cornerstone can help me.",
+      "acceptance_criteria": [
+        "Given I complete quiz questions, when I reach final step, then I see contact form for name, email, phone",
+        "Given I submit valid data, when form submits, then data posts to webhook URL",
+        "Given successful submission, when I see thank you page, then I see veteran appreciation message and next steps"
+      ],
+      "verification_steps": [
+        "Complete quiz and verify contact form appears",
+        "Submit test data and verify webhook receives POST",
+        "Verify thank you page displays correctly"
+      ],
+      "files_likely_affected": ["components/VALoanQuiz.tsx", "app/api/submit-lead/route.ts"],
+      "status": "pending",
+      "notes": "Depends on Story 5. Webhook URL: https://cbmtautos.duckdns.org/webhook/tanner-dscr-leads. Include honeypot spam protection and rate limiting. Thank you message: 'Thank you for your service. We'll be in touch within 24 hours.'"
+    },
+    {
+      "id": 7,
+      "title": "Create API route for lead submission",
+      "description": "As a system, I want to process lead submissions so that they reach the CRM webhook.",
+      "acceptance_criteria": [
+        "Given a valid POST request, when API processes it, then lead data posts to webhook",
+        "Given spam submission (honeypot filled), when API processes it, then it returns success but doesn't post",
+        "Given rate limiting threshold exceeded, when API processes it, then it returns success but doesn't post"
+      ],
+      "verification_steps": [
+        "POST test lead data to API route",
+        "Verify webhook receives the data",
+        "Test honeypot and rate limiting"
+      ],
+      "files_likely_affected": ["app/api/submit-lead/route.ts"],
+      "status": "pending",
+      "notes": "Depends on Story 6. Include: honeypot field, rate limiting (5 per 15 min per IP), minimum form time check (3 seconds). Post all quiz answers plus contact info to webhook."
+    },
+    {
+      "id": 8,
+      "title": "Build blog infrastructure",
+      "description": "As a developer, I want a blog system so that we can publish SEO-optimized content.",
+      "acceptance_criteria": [
+        "Given blog infrastructure, when I check data folder, then posts.json exists for blog storage",
+        "Given a blog post, when I visit /blog/[slug], then the post renders with full content",
+        "Given blog listing, when I visit /blog, then I see all posts sorted by date"
+      ],
+      "verification_steps": [
+        "Verify data/posts.json structure",
+        "Visit a blog post URL and verify rendering",
+        "Visit /blog and verify listing works"
+      ],
+      "files_likely_affected": ["lib/blog/types.ts", "lib/blog/storage.ts", "lib/blog/posts.ts", "app/blog/page.tsx", "app/blog/[slug]/page.tsx", "data/posts.json"],
+      "status": "pending",
+      "notes": "Depends on Story 2. Follow same pattern as DSCR site blog. Include: ArticleSchema, BreadcrumbSchema, FAQSchema generation. Support markdown content with heading parsing."
+    },
+    {
+      "id": 9,
+      "title": "Create blog post component",
+      "description": "As a visitor, I want to read well-formatted blog posts so that I can learn about VA loans.",
+      "acceptance_criteria": [
+        "Given a blog post, when I view it, then I see title, author, publish date, and formatted content",
+        "Given blog content, when I view it, then headings are properly styled with anchor links",
+        "Given a blog post, when I scroll, then I see table of contents for navigation"
+      ],
+      "verification_steps": [
+        "View a blog post and verify all elements render",
+        "Verify heading styles and anchor links work",
+        "Verify table of contents navigation"
+      ],
+      "files_likely_affected": ["components/blog/BlogPost.tsx", "components/blog/TableOfContents.tsx", "components/blog/BlogCard.tsx"],
+      "status": "pending",
+      "notes": "Depends on Story 8. Style for readability - generous line height, proper paragraph spacing. Include TL;DR section at top for GEO optimization."
+    },
+    {
+      "id": 10,
+      "title": "Write blog post 1: VA Loan Eligibility Requirements",
+      "description": "As a veteran, I want to learn about VA loan eligibility so that I know if I qualify.",
+      "acceptance_criteria": [
+        "Given the blog post, when I read it, then it covers COE requirements, service minimums, discharge status",
+        "Given the content, when I analyze it, then it's 2000+ words and doesn't sound AI-generated",
+        "Given SEO, when I check meta tags, then title, description, and schema are optimized"
+      ],
+      "verification_steps": [
+        "Read post and verify comprehensive coverage",
+        "Word count check (2000+ words)",
+        "Check SEO meta tags and schema"
+      ],
+      "files_likely_affected": ["data/posts.json"],
+      "status": "pending",
+      "notes": "Depends on Story 8. Topics: COE (Certificate of Eligibility), service requirements by era, reserve/guard requirements, surviving spouse eligibility. Include FAQ section for schema. Use GEO optimization techniques."
+    },
+    {
+      "id": 11,
+      "title": "Write blog post 2: VA Loan Credit Score Requirements",
+      "description": "As a veteran with credit concerns, I want to understand credit requirements so that I know my options.",
+      "acceptance_criteria": [
+        "Given the blog post, when I read it, then it explains VA has no minimum score but lenders add overlays",
+        "Given the content, when I read it, then it explains Cornerstone underwrites direct to VA (no 620 overlay)",
+        "Given the content, when I analyze it, then it's 2000+ words and naturally written"
+      ],
+      "verification_steps": [
+        "Read post and verify credit score coverage",
+        "Verify Cornerstone differentiation is clear",
+        "Word count check (2000+ words)"
+      ],
+      "files_likely_affected": ["data/posts.json"],
+      "status": "pending",
+      "notes": "Depends on Story 8. Key message: VA doesn't set minimum FICO, but most lenders add 620-640 overlays. Cornerstone doesn't. This is our key differentiator. Include real examples of veterans with lower scores getting approved."
+    },
+    {
+      "id": 12,
+      "title": "Write blog post 3: VA Loan vs Conventional Loan Comparison",
+      "description": "As a veteran, I want to compare VA loans to conventional so that I can make an informed choice.",
+      "acceptance_criteria": [
+        "Given the blog post, when I read it, then it compares: down payment, PMI, rates, closing costs, credit requirements",
+        "Given the content, when I read it, then it clearly shows VA loan advantages",
+        "Given the format, when I view it, then comparison tables are easy to scan"
+      ],
+      "verification_steps": [
+        "Read post and verify comprehensive comparison",
+        "Verify comparison table is clear",
+        "Word count check (2000+ words)"
+      ],
+      "files_likely_affected": ["data/posts.json"],
+      "status": "pending",
+      "notes": "Depends on Story 8. Highlight: 0% down, no PMI, competitive rates, no prepayment penalty. Include real cost savings examples. Use GEO-optimized statistics with sources."
+    },
+    {
+      "id": 13,
+      "title": "Write blog post 4: VA Funding Fee Explained",
+      "description": "As a veteran, I want to understand the VA funding fee so that I'm not surprised at closing.",
+      "acceptance_criteria": [
+        "Given the blog post, when I read it, then it explains fee amounts by down payment and use (first/subsequent)",
+        "Given the content, when I read it, then it explains exemptions for disabled veterans",
+        "Given the content, when I read it, then it explains the fee can be rolled into loan"
+      ],
+      "verification_steps": [
+        "Read post and verify fee table accuracy",
+        "Verify disability exemption coverage",
+        "Word count check (2000+ words)"
+      ],
+      "files_likely_affected": ["data/posts.json"],
+      "status": "pending",
+      "notes": "Depends on Story 8. Include 2024 funding fee table. Explain exemptions: 10%+ disability rating, Purple Heart recipients, surviving spouses. Can be financed into loan amount."
+    },
+    {
+      "id": 14,
+      "title": "Write blog post 5: VA IRRRL Streamline Refinance Guide",
+      "description": "As a veteran with existing VA loan, I want to learn about IRRRL so that I can lower my rate.",
+      "acceptance_criteria": [
+        "Given the blog post, when I read it, then it explains IRRRL benefits and requirements",
+        "Given the content, when I read it, then it covers no appraisal, no income verification benefits",
+        "Given the content, when I read it, then it explains when IRRRL makes sense vs cash-out"
+      ],
+      "verification_steps": [
+        "Read post and verify IRRRL coverage",
+        "Verify streamlined process is explained",
+        "Word count check (2000+ words)"
+      ],
+      "files_likely_affected": ["data/posts.json"],
+      "status": "pending",
+      "notes": "Depends on Story 8. Interest Rate Reduction Refinance Loan. Benefits: no appraisal needed, no income/employment verification, can close quickly. Must have existing VA loan. Include break-even analysis example."
+    },
+    {
+      "id": 15,
+      "title": "Write blog post 6: VA Cash-Out Refinance Complete Guide",
+      "description": "As a veteran with equity, I want to learn about VA cash-out refi so that I can access my equity.",
+      "acceptance_criteria": [
+        "Given the blog post, when I read it, then it explains cash-out refi process and requirements",
+        "Given the content, when I read it, then it covers up to 100% LTV (VA benefit)",
+        "Given the content, when I read it, then it compares to HELOC and other options"
+      ],
+      "verification_steps": [
+        "Read post and verify cash-out coverage",
+        "Verify LTV limits are accurate",
+        "Word count check (2000+ words)"
+      ],
+      "files_likely_affected": ["data/posts.json"],
+      "status": "pending",
+      "notes": "Depends on Story 8. VA allows up to 100% LTV cash-out (conventional typically 80%). Can also use to convert conventional to VA. Include use cases: debt consolidation, home improvement, investment."
+    },
+    {
+      "id": 16,
+      "title": "Write blog post 7: VA Loan for First-Time Homebuyers",
+      "description": "As a first-time veteran homebuyer, I want a comprehensive guide so that I understand the process.",
+      "acceptance_criteria": [
+        "Given the blog post, when I read it, then it covers entire homebuying process step-by-step",
+        "Given the content, when I read it, then it addresses first-timer concerns and questions",
+        "Given the content, when I read it, then it includes checklist and timeline"
+      ],
+      "verification_steps": [
+        "Read post and verify step-by-step coverage",
+        "Verify first-timer questions are addressed",
+        "Word count check (2000+ words)"
+      ],
+      "files_likely_affected": ["data/posts.json"],
+      "status": "pending",
+      "notes": "Depends on Story 8. Steps: 1) Get COE, 2) Get pre-approved, 3) Find VA-savvy agent, 4) House hunt, 5) Make offer, 6) Appraisal, 7) Underwriting, 8) Close. Include timeline expectations."
+    },
+    {
+      "id": 17,
+      "title": "Write blog post 8: VA Loan Property Requirements",
+      "description": "As a veteran, I want to know what properties qualify for VA loans so that I search correctly.",
+      "acceptance_criteria": [
+        "Given the blog post, when I read it, then it covers MPRs (Minimum Property Requirements)",
+        "Given the content, when I read it, then it explains what can cause appraisal issues",
+        "Given the content, when I read it, then it covers condos, multi-family, manufactured homes"
+      ],
+      "verification_steps": [
+        "Read post and verify property requirement coverage",
+        "Verify MPR explanation is clear",
+        "Word count check (2000+ words)"
+      ],
+      "files_likely_affected": ["data/posts.json"],
+      "status": "pending",
+      "notes": "Depends on Story 8. MPRs: safe, sanitary, structurally sound. Common issues: peeling paint, roof damage, HVAC problems. Condo must be VA-approved. Multi-family up to 4 units allowed."
+    },
+    {
+      "id": 18,
+      "title": "Write blog post 9: VA Loan Closing Costs Breakdown",
+      "description": "As a veteran, I want to understand closing costs so that I can budget properly.",
+      "acceptance_criteria": [
+        "Given the blog post, when I read it, then it breaks down each closing cost line item",
+        "Given the content, when I read it, then it explains which fees VA prohibits veterans from paying",
+        "Given the content, when I read it, then it provides realistic cost estimates"
+      ],
+      "verification_steps": [
+        "Read post and verify closing cost breakdown",
+        "Verify VA fee restrictions are accurate",
+        "Word count check (2000+ words)"
+      ],
+      "files_likely_affected": ["data/posts.json"],
+      "status": "pending",
+      "notes": "Depends on Story 8. VA prohibits certain fees: attorney fees in some states, prepayment penalties. Typical costs: funding fee, appraisal, title, recording. Seller can pay up to 4% concessions."
+    },
+    {
+      "id": 19,
+      "title": "Write blog post 10: VA Loan Limits and Entitlement Explained",
+      "description": "As a veteran, I want to understand entitlement and limits so that I know how much I can borrow.",
+      "acceptance_criteria": [
+        "Given the blog post, when I read it, then it explains full vs remaining entitlement",
+        "Given the content, when I read it, then it explains 2020 Blue Water Navy Act (no limits with full entitlement)",
+        "Given the content, when I read it, then it covers having multiple VA loans"
+      ],
+      "verification_steps": [
+        "Read post and verify entitlement explanation",
+        "Verify no-limit information is current",
+        "Word count check (2000+ words)"
+      ],
+      "files_likely_affected": ["data/posts.json"],
+      "status": "pending",
+      "notes": "Depends on Story 8. Post-2020: No loan limits with full entitlement. Partial entitlement still has county limits. Can have multiple VA loans (one for each property). Restoration of entitlement rules."
+    },
+    {
+      "id": 20,
+      "title": "Write blog post 11: VA Loan for Investment Property",
+      "description": "As a veteran investor, I want to know if I can use VA loan for investment so that I can build wealth.",
+      "acceptance_criteria": [
+        "Given the blog post, when I read it, then it explains occupancy requirements",
+        "Given the content, when I read it, then it covers multi-family house hacking strategy",
+        "Given the content, when I read it, then it addresses PCS and renting previous VA home"
+      ],
+      "verification_steps": [
+        "Read post and verify occupancy rules are clear",
+        "Verify house hacking strategy is explained",
+        "Word count check (2000+ words)"
+      ],
+      "files_likely_affected": ["data/posts.json"],
+      "status": "pending",
+      "notes": "Depends on Story 8. VA requires owner occupancy (60 days). House hack: buy 2-4 unit, live in one, rent others. After PCS can rent previous home and get new VA loan. Can restore entitlement after selling."
+    },
+    {
+      "id": 21,
+      "title": "Write blog post 12: VA Loan for Surviving Spouses",
+      "description": "As a surviving spouse, I want to know if I qualify for VA benefits so that I can honor my spouse's service.",
+      "acceptance_criteria": [
+        "Given the blog post, when I read it, then it covers unremarried surviving spouse eligibility",
+        "Given the content, when I read it, then it explains remarried spouse rules after age 57",
+        "Given the content, when I read it, then it covers VA DIC and funding fee exemption"
+      ],
+      "verification_steps": [
+        "Read post and verify surviving spouse eligibility",
+        "Verify remarriage rules are accurate",
+        "Word count check (2000+ words)"
+      ],
+      "files_likely_affected": ["data/posts.json"],
+      "status": "pending",
+      "notes": "Depends on Story 8. Unremarried surviving spouses of veterans who died in service or from service-connected disability qualify. Remarried after 57? Still eligible. Exempt from funding fee. Compassionate, respectful tone essential."
+    },
+    {
+      "id": 22,
+      "title": "Write blog post 13: VA Loan Appraisal Process",
+      "description": "As a veteran homebuyer, I want to understand the VA appraisal so that I know what to expect.",
+      "acceptance_criteria": [
+        "Given the blog post, when I read it, then it explains VA appraisal vs conventional",
+        "Given the content, when I read it, then it covers NOV (Notice of Value) and Tidewater process",
+        "Given the content, when I read it, then it explains appraisal gap strategies"
+      ],
+      "verification_steps": [
+        "Read post and verify appraisal process coverage",
+        "Verify Tidewater explanation",
+        "Word count check (2000+ words)"
+      ],
+      "files_likely_affected": ["data/posts.json"],
+      "status": "pending",
+      "notes": "Depends on Story 8. VA appraisers check MPRs + value. Tidewater: appraiser warns if value may come in low. NOV stays with property 6 months. Low appraisal options: renegotiate, pay gap, walk away, appeal."
+    },
+    {
+      "id": 23,
+      "title": "Write blog post 14: VA Loan for National Guard and Reserves",
+      "description": "As a Guard/Reserve member, I want to know my VA loan eligibility so that I can use my benefits.",
+      "acceptance_criteria": [
+        "Given the blog post, when I read it, then it covers 6-year service requirement for Guard/Reserve",
+        "Given the content, when I read it, then it explains activation periods counting toward eligibility",
+        "Given the content, when I read it, then it covers different funding fee for reserves"
+      ],
+      "verification_steps": [
+        "Read post and verify Guard/Reserve requirements",
+        "Verify activation rules are accurate",
+        "Word count check (2000+ words)"
+      ],
+      "files_likely_affected": ["data/posts.json"],
+      "status": "pending",
+      "notes": "Depends on Story 8. Guard/Reserve: 6 years required OR 90+ days Title 10 activation. Different funding fee schedule. Can combine active + reserve time. Include specific examples."
+    },
+    {
+      "id": 24,
+      "title": "Write blog post 15: How to Get Your VA Certificate of Eligibility",
+      "description": "As a veteran, I want to know how to get my COE so that I can start the loan process.",
+      "acceptance_criteria": [
+        "Given the blog post, when I read it, then it covers all COE methods (lender portal, eBenefits, mail)",
+        "Given the content, when I read it, then it includes step-by-step instructions with screenshots concept",
+        "Given the content, when I read it, then it covers documents needed by service type"
+      ],
+      "verification_steps": [
+        "Read post and verify all COE methods covered",
+        "Verify step-by-step instructions are clear",
+        "Word count check (2000+ words)"
+      ],
+      "files_likely_affected": ["data/posts.json"],
+      "status": "pending",
+      "notes": "Depends on Story 8. Methods: 1) Lender pulls via VA portal (fastest), 2) eBenefits/VA.gov self-service, 3) Mail VA Form 26-1880. Documents: DD-214 (veterans), statement of service (active)."
+    },
+    {
+      "id": 25,
+      "title": "Write blog post 16: VA Loan Myths Debunked",
+      "description": "As a veteran, I want to learn the truth about VA loans so that I'm not misled by myths.",
+      "acceptance_criteria": [
+        "Given the blog post, when I read it, then it debunks 10+ common VA loan myths",
+        "Given the content, when I read it, then it provides factual corrections with sources",
+        "Given the format, when I view it, then each myth is clearly separated and debunked"
+      ],
+      "verification_steps": [
+        "Read post and verify 10+ myths covered",
+        "Verify facts are accurate",
+        "Word count check (2000+ words)"
+      ],
+      "files_likely_affected": ["data/posts.json"],
+      "status": "pending",
+      "notes": "Depends on Story 8. Myths: 1) VA loans take forever, 2) Sellers won't accept VA offers, 3) You can only use VA loan once, 4) VA loans are only for first-time buyers, 5) You need perfect credit, etc."
+    },
+    {
+      "id": 26,
+      "title": "Write blog post 17: VA Loan After Bankruptcy or Foreclosure",
+      "description": "As a veteran who had financial hardship, I want to know if I can still get a VA loan.",
+      "acceptance_criteria": [
+        "Given the blog post, when I read it, then it covers waiting periods after bankruptcy/foreclosure",
+        "Given the content, when I read it, then it emphasizes Cornerstone's no-overlay policy helps here",
+        "Given the content, when I read it, then it provides path forward for rebuilding"
+      ],
+      "verification_steps": [
+        "Read post and verify waiting period information",
+        "Verify Cornerstone differentiation is clear",
+        "Word count check (2000+ words)"
+      ],
+      "files_likely_affected": ["data/posts.json"],
+      "status": "pending",
+      "notes": "Depends on Story 8. Chapter 7: 2 years from discharge. Chapter 13: 1 year with court approval. Foreclosure: 2 years. VA is more forgiving than conventional. Cornerstone's direct-to-VA underwriting helps veterans in these situations."
+    },
+    {
+      "id": 27,
+      "title": "Write blog post 18: VA Loan vs FHA Loan Comparison",
+      "description": "As a veteran, I want to compare VA to FHA so that I choose the best option.",
+      "acceptance_criteria": [
+        "Given the blog post, when I read it, then it compares down payment, PMI/MIP, rates, limits",
+        "Given the content, when I read it, then it clearly shows when VA is better (almost always)",
+        "Given the format, when I view it, then comparison table is easy to scan"
+      ],
+      "verification_steps": [
+        "Read post and verify comprehensive comparison",
+        "Verify comparison favors VA appropriately",
+        "Word count check (2000+ words)"
+      ],
+      "files_likely_affected": ["data/posts.json"],
+      "status": "pending",
+      "notes": "Depends on Story 8. VA advantages: 0% down vs 3.5%, no PMI vs lifetime MIP on FHA, no loan limits, better rates typically. FHA only better if: credit below 580 or non-veteran."
+    },
+    {
+      "id": 28,
+      "title": "Write blog post 19: VA Loan for Disabled Veterans",
+      "description": "As a disabled veteran, I want to know my additional VA loan benefits.",
+      "acceptance_criteria": [
+        "Given the blog post, when I read it, then it covers funding fee exemption for 10%+ disability",
+        "Given the content, when I read it, then it covers SADGP (adapted housing grants)",
+        "Given the content, when I read it, then it maintains respectful, empowering tone"
+      ],
+      "verification_steps": [
+        "Read post and verify disability benefits coverage",
+        "Verify SADGP information is accurate",
+        "Word count check (2000+ words)"
+      ],
+      "files_likely_affected": ["data/posts.json"],
+      "status": "pending",
+      "notes": "Depends on Story 8. Benefits: Funding fee waived (10%+ rating), SAH/SHA grants for adapting homes, Purple Heart recipients exempt. Tone: empowering, not pitying. These veterans deserve this."
+    },
+    {
+      "id": 29,
+      "title": "Write blog post 20: Current VA Loan Rates and Market Analysis",
+      "description": "As a veteran, I want to understand current VA rates so that I can time my purchase.",
+      "acceptance_criteria": [
+        "Given the blog post, when I read it, then it explains how VA rates work and current market",
+        "Given the content, when I read it, then it covers rate factors (credit, down payment, loan type)",
+        "Given the content, when I read it, then it includes rate lock strategies"
+      ],
+      "verification_steps": [
+        "Read post and verify rate explanation",
+        "Verify rate factors are covered",
+        "Word count check (2000+ words)"
+      ],
+      "files_likely_affected": ["data/posts.json"],
+      "status": "pending",
+      "notes": "Depends on Story 8. Explain: VA rates typically 0.25-0.5% lower than conventional. Factors affecting rate. When to lock. ARM vs fixed. Include: get personalized quote CTA."
+    },
+    {
+      "id": 30,
+      "title": "Implement SEO meta tags and schema markup",
+      "description": "As a search engine, I want proper structured data so that I can index and display the site correctly.",
+      "acceptance_criteria": [
+        "Given any page, when I view source, then proper meta tags exist (title, description, OG)",
+        "Given homepage, when I check schema, then Organization and LocalBusiness schemas exist",
+        "Given blog posts, when I check schema, then Article, FAQ, and HowTo schemas exist where appropriate"
+      ],
+      "verification_steps": [
+        "Run Google Rich Results Test on homepage",
+        "Validate all schema types",
+        "Check meta tags on all page types"
+      ],
+      "files_likely_affected": ["app/layout.tsx", "lib/schema.ts", "app/blog/[slug]/page.tsx"],
+      "status": "pending",
+      "notes": "Depends on Stories 8, 9. Include: Organization schema with NMLS, LocalBusiness if applicable, Article schema for blogs, FAQ schema from blog content, BreadcrumbList for navigation."
+    },
+    {
+      "id": 31,
+      "title": "Run GEO content optimization on all blog posts",
+      "description": "As content, I want to be optimized for AI search engines so that I get cited by ChatGPT, Perplexity, etc.",
+      "acceptance_criteria": [
+        "Given each blog post, when analyzed, then it includes quotable statements with statistics",
+        "Given each blog post, when analyzed, then it has TL;DR summary at top",
+        "Given each blog post, when analyzed, then it uses GEO-optimized formatting (Q&A sections, expert attribution)"
+      ],
+      "verification_steps": [
+        "Review each post for GEO optimization",
+        "Verify TL;DR sections exist",
+        "Verify quotable statistics with sources"
+      ],
+      "files_likely_affected": ["data/posts.json"],
+      "status": "pending",
+      "notes": "Depends on Stories 10-29. Use /geo-content-optimizer skill. Add: TL;DR at top, quotable statistics, Q&A format where appropriate, expert attribution, FAQ schema content."
+    },
+    {
+      "id": 32,
+      "title": "Run SEO-GEO audit on entire site",
+      "description": "As a site, I want comprehensive SEO and GEO optimization so that I rank well in traditional and AI search.",
+      "acceptance_criteria": [
+        "Given site audit, when run, then all pages have optimized meta tags",
+        "Given site audit, when run, then schema markup validates on all pages",
+        "Given site audit, when run, then content passes GEO score threshold"
+      ],
+      "verification_steps": [
+        "Run /seo-geo audit",
+        "Fix any identified issues",
+        "Verify final audit passes"
+      ],
+      "files_likely_affected": ["Multiple files based on audit results"],
+      "status": "pending",
+      "notes": "Depends on Story 31. Use /seo-geo skill for comprehensive audit. Fix any issues found. Target: 90+ SEO score, strong GEO optimization indicators."
+    },
+    {
+      "id": 33,
+      "title": "Create sitemap.xml and robots.txt",
+      "description": "As a search engine, I want sitemap and robots.txt so that I can crawl the site efficiently.",
+      "acceptance_criteria": [
+        "Given sitemap.xml, when accessed, then all pages are listed with proper priorities",
+        "Given robots.txt, when accessed, then it allows crawling and references sitemap",
+        "Given AI crawlers, when checking robots.txt, then they are explicitly allowed"
+      ],
+      "verification_steps": [
+        "Access /sitemap.xml and verify all URLs",
+        "Access /robots.txt and verify content",
+        "Verify AI crawler directives"
+      ],
+      "files_likely_affected": ["app/sitemap.ts", "app/robots.ts"],
+      "status": "pending",
+      "notes": "Depends on Story 8. Include all blog posts in sitemap. Allow: GPTBot, Claude-Web, PerplexityBot, Google-Extended. Reference llms.txt if created."
+    },
+    {
+      "id": 34,
+      "title": "Add analytics tracking",
+      "description": "As a marketer, I want analytics so that I can measure site performance.",
+      "acceptance_criteria": [
+        "Given any page, when it loads, then GA4 pageview fires",
+        "Given quiz completion, when lead submits, then conversion event fires",
+        "Given quiz steps, when user progresses, then step events fire"
+      ],
+      "verification_steps": [
+        "Check GA4 real-time for pageviews",
+        "Submit test lead and verify conversion",
+        "Progress through quiz and verify step events"
+      ],
+      "files_likely_affected": ["app/layout.tsx", "lib/analytics.ts", "components/VALoanQuiz.tsx"],
+      "status": "pending",
+      "notes": "Depends on Stories 5, 6. Events: page_view, quiz_start, quiz_step_{n}, quiz_complete, lead_submit, phone_click. Include Facebook Pixel if ID provided."
+    },
+    {
+      "id": 35,
+      "title": "Final QA and Lighthouse audit",
+      "description": "As a developer, I want to ensure the site is production-ready with excellent performance.",
+      "acceptance_criteria": [
+        "Given Lighthouse audit, when run on homepage, then scores are 90+ on all metrics",
+        "Given all pages, when tested, then no console errors appear",
+        "Given mobile view, when tested, then site is fully responsive"
+      ],
+      "verification_steps": [
+        "Run Lighthouse on homepage - verify 90+ scores",
+        "Test all pages for console errors",
+        "Test mobile responsiveness"
+      ],
+      "files_likely_affected": ["Various optimization files"],
+      "status": "pending",
+      "notes": "Depends on all previous stories. Check: Performance (90+), Accessibility (90+), Best Practices (90+), SEO (90+). Fix any issues found. Verify Google Ads readiness (fast load, clear CTAs)."
+    }
+  ],
+  "completion_criteria": {
+    "all_tests_pass": true,
+    "build_succeeds": true,
+    "smoke_test_passes": true,
+    "custom_checks": [
+      "Quiz funnel submits leads to webhook successfully",
+      "All 20 blog posts are 2000+ words and human-written",
+      "SEO/GEO optimization complete",
+      "Lighthouse scores 90+ on all metrics",
+      "Site is Google Ads ready"
+    ]
+  },
+  "context_notes": "VA Loan lead funnel for Cornerstone First Mortgage. KEY DIFFERENTIATOR: We underwrite directly to VA guidelines with NO overlays (no 620 FICO minimum like other lenders). In-house VA specialist underwriting team. Theme: 'They Served For Us. Now We Serve Them.' - respectful veteran appreciation. Webhook: https://cbmtautos.duckdns.org/webhook/tanner-dscr-leads. 20 blog posts required, 2000+ words each, written naturally (not AI-sounding). Use GEO optimization (/geo-content-optimizer) and SEO (/seo-geo) skills. Design: slick, modern, Google Ads ready. Project folder: C:\\Users\\tanne\\Desktop\\CLAUDE\\va-loan-site",
+  "preflight_completed": true,
+  "preflight_timestamp": "2026-03-12T22:05:00Z",
+  "active_gotchas": ["form_handling", "webhook_integration", "blog_system"]
+}
