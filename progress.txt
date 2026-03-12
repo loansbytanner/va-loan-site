@@ -52,3 +52,6 @@
 [2026-03-12 08:23] [STORY_10] [STARTED] Write blog post 1: VA Loan Eligibility Requirements
 [2026-03-12 08:25] [STORY_10] [PROGRESS] Wrote 2145-word blog post on VA Loan Eligibility Requirements
 [2026-03-12 08:25] [STORY_10] [COMPLETED] All acceptance criteria verified - build succeeds
+[2026-03-12 08:25] [STORY_11] [STARTED] Write blog post 2: VA Loan Credit Score Requirements
+[2026-03-12 08:27] [STORY_11] [PROGRESS] Wrote 2248-word blog post on VA Loan Credit Score Requirements
+[2026-03-12 08:27] [STORY_11] [COMPLETED] All acceptance criteria verified - Cornerstone differentiation clear

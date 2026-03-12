@@ -268,8 +268,9 @@
         "Word count check (2000+ words)"
       ],
       "files_likely_affected": ["data/posts.json"],
-      "status": "pending",
-      "notes": "Depends on Story 8. Key message: VA doesn't set minimum FICO, but most lenders add 620-640 overlays. Cornerstone doesn't. This is our key differentiator. Include real examples of veterans with lower scores getting approved."
+      "status": "completed",
+      "completed_at": "2026-03-12T15:45:00Z",
+      "notes": "2248 words. Explains VA has no minimum, lenders add 620-640 overlays, Cornerstone underwrites direct to VA. Includes Marcus example, manual underwriting explanation, credit improvement tips."
     },
     {
       "id": 12,
