@@ -173,8 +173,9 @@
         "Verify thank you page displays correctly"
       ],
       "files_likely_affected": ["components/VALoanQuiz.tsx", "app/api/submit-lead/route.ts"],
-      "status": "pending",
-      "notes": "Depends on Story 5. Webhook URL: https://cbmtautos.duckdns.org/webhook/tanner-dscr-leads. Include honeypot spam protection and rate limiting. Thank you message: 'Thank you for your service. We'll be in touch within 24 hours.'"
+      "status": "completed",
+      "completed_at": "2026-03-12T22:45:00Z",
+      "notes": "Contact form included in VALoanQuiz.tsx. Thank you page shows veteran appreciation message."
     },
     {
       "id": 7,
@@ -191,8 +192,9 @@
         "Test honeypot and rate limiting"
       ],
       "files_likely_affected": ["app/api/submit-lead/route.ts"],
-      "status": "pending",
-      "notes": "Depends on Story 6. Include: honeypot field, rate limiting (5 per 15 min per IP), minimum form time check (3 seconds). Post all quiz answers plus contact info to webhook."
+      "status": "completed",
+      "completed_at": "2026-03-12T22:45:00Z",
+      "notes": "API route posts to webhook with all quiz data, honeypot, rate limiting (5/15min), and 3-second minimum form time check."
     },
     {
       "id": 8,
