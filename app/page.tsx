@@ -1,5 +1,6 @@
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
+import ValueProps from '@/components/ValueProps';
 import Footer from '@/components/Footer';
 
 export default function Home() {
@@ -21,17 +22,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Placeholder for Value Props - Story 4 */}
-        <section className="py-24 bg-cream">
-          <div className="mx-auto max-w-7xl px-4">
-            <h2 className="text-3xl font-bold text-navy-deep text-center mb-4">
-              Why Choose Cornerstone for Your VA Loan?
-            </h2>
-            <p className="text-slate-dark text-center">
-              Value proposition sections coming soon...
-            </p>
-          </div>
-        </section>
+        {/* Value Propositions */}
+        <ValueProps />
       </main>
       <Footer />
     </>
