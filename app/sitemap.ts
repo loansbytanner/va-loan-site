@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 import { getAllPosts } from '@/lib/blog/posts';
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://cornerstonefirst.com';
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://vahomeloanpros.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const posts = getAllPosts();

@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://cornerstonefirst.com';
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://vahomeloanpros.com';
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     siteName: "Cornerstone First Mortgage",
     images: [
       {
-        url: `${BASE_URL}/og-image.png`,
+        url: `${BASE_URL}/og-image.svg`,
         width: 1200,
         height: 630,
         alt: "Cornerstone First Mortgage - VA Loan Specialists",
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "VA Loans for Veterans | No Overlays | Cornerstone First",
     description: "VA loans with no lender overlays. Zero down payment, no PMI, no minimum credit score.",
-    images: [`${BASE_URL}/og-image.png`],
+    images: [`${BASE_URL}/og-image.svg`],
   },
   robots: {
     index: true,
