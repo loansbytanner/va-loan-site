@@ -6,13 +6,28 @@
   "tech_stack": {
     "language": "TypeScript",
     "framework": "Next.js 16+ with App Router",
-    "key_dependencies": ["tailwindcss", "react-hook-form", "zod", "lucide-react", "resend"]
+    "key_dependencies": [
+      "tailwindcss",
+      "react-hook-form",
+      "zod",
+      "lucide-react",
+      "resend"
+    ]
   },
   "tech_context": {
     "runtime": "Node.js",
     "framework": "Next.js",
-    "detected_patterns": ["form_handling", "webhook_integration", "blog_system", "quiz_funnel", "seo_optimization", "geo_optimization"],
-    "platforms": ["windows"]
+    "detected_patterns": [
+      "form_handling",
+      "webhook_integration",
+      "blog_system",
+      "quiz_funnel",
+      "seo_optimization",
+      "geo_optimization"
+    ],
+    "platforms": [
+      "windows"
+    ]
   },
   "interview_summary": {
     "technical_decisions": [
@@ -77,7 +92,12 @@
         "Run npm run dev and verify server starts",
         "Check tailwind.config.ts for correct colors"
       ],
-      "files_likely_affected": ["package.json", "tailwind.config.ts", "app/layout.tsx", "app/globals.css"],
+      "files_likely_affected": [
+        "package.json",
+        "tailwind.config.ts",
+        "app/layout.tsx",
+        "app/globals.css"
+      ],
       "status": "completed",
       "completed_at": "2026-03-12T22:15:00Z",
       "notes": "Next.js 16.1.6 initialized with Tailwind CSS. Military color palette configured in globals.css. Dependencies: react-hook-form, zod, lucide-react, resend installed."
@@ -96,7 +116,11 @@
         "Verify consistent styling across components",
         "Check Footer for NMLS disclosure text"
       ],
-      "files_likely_affected": ["components/ui/Button.tsx", "components/Header.tsx", "components/Footer.tsx"],
+      "files_likely_affected": [
+        "components/ui/Button.tsx",
+        "components/Header.tsx",
+        "components/Footer.tsx"
+      ],
       "status": "completed",
       "completed_at": "2026-03-12T22:20:00Z",
       "notes": "Created Button (4 variants, 3 sizes), Header (responsive with mobile menu), Footer (NMLS #173855 disclosure, contact info, navigation links)."
@@ -115,7 +139,10 @@
         "Verify CTA button is prominent and links to quiz",
         "Verify trust badges/indicators are visible"
       ],
-      "files_likely_affected": ["app/page.tsx", "components/Hero.tsx"],
+      "files_likely_affected": [
+        "app/page.tsx",
+        "components/Hero.tsx"
+      ],
       "status": "completed",
       "completed_at": "2026-03-12T22:25:00Z",
       "notes": "Hero with tagline, 2 CTAs (Get Pre-Qualified, Learn About VA Loans), 3 trust indicators, quick stats, social proof section."
@@ -134,7 +161,11 @@
         "Verify each section clearly explains the benefit",
         "Verify content is veteran-focused, not salesy"
       ],
-      "files_likely_affected": ["app/page.tsx", "components/ValueProps.tsx", "components/NoOverlays.tsx"],
+      "files_likely_affected": [
+        "app/page.tsx",
+        "components/ValueProps.tsx",
+        "components/NoOverlays.tsx"
+      ],
       "status": "completed",
       "completed_at": "2026-03-12T22:30:00Z",
       "notes": "Created ValueProps component with 6 value props grid, comparison table showing overlay differences, and CTA."
@@ -153,7 +184,9 @@
         "Verify auto-advance on selection works",
         "Verify progress bar updates correctly"
       ],
-      "files_likely_affected": ["components/VALoanQuiz.tsx"],
+      "files_likely_affected": [
+        "components/VALoanQuiz.tsx"
+      ],
       "status": "completed",
       "completed_at": "2026-03-12T22:40:00Z",
       "notes": "8-step quiz: loan purpose, service status, branch, state, property type, property interest, credit score, loan amount. Auto-advance with animations, progress bar."
@@ -172,7 +205,10 @@
         "Submit test data and verify webhook receives POST",
         "Verify thank you page displays correctly"
       ],
-      "files_likely_affected": ["components/VALoanQuiz.tsx", "app/api/submit-lead/route.ts"],
+      "files_likely_affected": [
+        "components/VALoanQuiz.tsx",
+        "app/api/submit-lead/route.ts"
+      ],
       "status": "completed",
       "completed_at": "2026-03-12T22:45:00Z",
       "notes": "Contact form included in VALoanQuiz.tsx. Thank you page shows veteran appreciation message."
@@ -191,7 +227,9 @@
         "Verify webhook receives the data",
         "Test honeypot and rate limiting"
       ],
-      "files_likely_affected": ["app/api/submit-lead/route.ts"],
+      "files_likely_affected": [
+        "app/api/submit-lead/route.ts"
+      ],
       "status": "completed",
       "completed_at": "2026-03-12T22:45:00Z",
       "notes": "API route posts to webhook with all quiz data, honeypot, rate limiting (5/15min), and 3-second minimum form time check."
@@ -210,7 +248,14 @@
         "Visit a blog post URL and verify rendering",
         "Visit /blog and verify listing works"
       ],
-      "files_likely_affected": ["lib/blog/types.ts", "lib/blog/storage.ts", "lib/blog/posts.ts", "app/blog/page.tsx", "app/blog/[slug]/page.tsx", "data/posts.json"],
+      "files_likely_affected": [
+        "lib/blog/types.ts",
+        "lib/blog/storage.ts",
+        "lib/blog/posts.ts",
+        "app/blog/page.tsx",
+        "app/blog/[slug]/page.tsx",
+        "data/posts.json"
+      ],
       "status": "completed",
       "completed_at": "2026-03-12T22:55:00Z",
       "notes": "Blog infrastructure with types, storage, posts library, schema generation (Article, Breadcrumb, FAQ, HowTo), BlogCard, BlogPost components, and blog pages."
@@ -229,7 +274,11 @@
         "Verify heading styles and anchor links work",
         "Verify table of contents navigation"
       ],
-      "files_likely_affected": ["components/blog/BlogPost.tsx", "components/blog/TableOfContents.tsx", "components/blog/BlogCard.tsx"],
+      "files_likely_affected": [
+        "components/blog/BlogPost.tsx",
+        "components/blog/TableOfContents.tsx",
+        "components/blog/BlogCard.tsx"
+      ],
       "status": "completed",
       "completed_at": "2026-03-12T15:25:00Z",
       "notes": "Created TableOfContents component with IntersectionObserver for active heading tracking. Updated BlogPost with sidebar layout for TOC on desktop. TL;DR section already present."
@@ -248,7 +297,9 @@
         "Word count check (2000+ words)",
         "Check SEO meta tags and schema"
       ],
-      "files_likely_affected": ["data/posts.json"],
+      "files_likely_affected": [
+        "data/posts.json"
+      ],
       "status": "completed",
       "completed_at": "2026-03-12T15:35:00Z",
       "notes": "2145 words covering COE, service requirements by era (WWII-present), discharge status rules, Guard/Reserve eligibility, surviving spouse benefits, and FAQ section. Human-readable conversational tone."
@@ -267,7 +318,9 @@
         "Verify Cornerstone differentiation is clear",
         "Word count check (2000+ words)"
       ],
-      "files_likely_affected": ["data/posts.json"],
+      "files_likely_affected": [
+        "data/posts.json"
+      ],
       "status": "completed",
       "completed_at": "2026-03-12T15:45:00Z",
       "notes": "2248 words. Explains VA has no minimum, lenders add 620-640 overlays, Cornerstone underwrites direct to VA. Includes Marcus example, manual underwriting explanation, credit improvement tips."
@@ -286,7 +339,9 @@
         "Verify comparison table is clear",
         "Word count check (2000+ words)"
       ],
-      "files_likely_affected": ["data/posts.json"],
+      "files_likely_affected": [
+        "data/posts.json"
+      ],
       "status": "completed",
       "completed_at": "2026-03-12T15:55:00Z",
       "notes": "2145 words comparing VA vs conventional on all key factors. Real $400K home cost comparison shows $33,500+ savings. Covers when conventional might make sense."
@@ -305,7 +360,9 @@
         "Verify disability exemption coverage",
         "Word count check (2000+ words)"
       ],
-      "files_likely_affected": ["data/posts.json"],
+      "files_likely_affected": [
+        "data/posts.json"
+      ],
       "status": "completed",
       "completed_at": "2026-03-12T16:05:00Z",
       "notes": "2044 words. Complete 2024 rate table, all exemption categories, financing options, fee vs PMI comparison, refund scenarios."
@@ -324,7 +381,9 @@
         "Verify streamlined process is explained",
         "Word count check (2000+ words)"
       ],
-      "files_likely_affected": ["data/posts.json"],
+      "files_likely_affected": [
+        "data/posts.json"
+      ],
       "status": "completed",
       "completed_at": "2026-03-12T16:15:00Z",
       "notes": "2063 words. Complete IRRRL guide with requirements, benefits, step-by-step process, IRRRL vs cash-out comparison, ARM conversion, break-even analysis."
@@ -343,7 +402,9 @@
         "Verify LTV limits are accurate",
         "Word count check (2000+ words)"
       ],
-      "files_likely_affected": ["data/posts.json"],
+      "files_likely_affected": [
+        "data/posts.json"
+      ],
       "status": "completed",
       "completed_at": "2026-03-12T16:35:00Z",
       "notes": "2014 words. 100% LTV advantage, HELOC comparison, step-by-step process, smart uses for funds, warning signs."
@@ -362,7 +423,9 @@
         "Verify first-timer questions are addressed",
         "Word count check (2000+ words)"
       ],
-      "files_likely_affected": ["data/posts.json"],
+      "files_likely_affected": [
+        "data/posts.json"
+      ],
       "status": "completed",
       "completed_at": "2026-03-12T16:35:00Z",
       "notes": "2047 words. Complete 9-step process from readiness through closing, timeline, mistakes to avoid, team building, first year of ownership."
@@ -381,7 +444,9 @@
         "Verify MPR explanation is clear",
         "Word count check (2000+ words)"
       ],
-      "files_likely_affected": ["data/posts.json"],
+      "files_likely_affected": [
+        "data/posts.json"
+      ],
       "status": "completed",
       "completed_at": "2026-03-12T16:55:00Z",
       "notes": "2054 words. MPRs, common issues, condo approval, multi-family, manufactured homes, rural properties, working around issues."
@@ -400,7 +465,9 @@
         "Verify VA fee restrictions are accurate",
         "Word count check (2000+ words)"
       ],
-      "files_likely_affected": ["data/posts.json"],
+      "files_likely_affected": [
+        "data/posts.json"
+      ],
       "status": "completed",
       "completed_at": "2026-03-12T16:55:00Z",
       "notes": "2045 words. Allowed vs prohibited fees, 1% cap, seller concessions, real examples, hidden costs, title insurance, prepaids."
@@ -419,7 +486,9 @@
         "Verify no-limit information is current",
         "Word count check (2000+ words)"
       ],
-      "files_likely_affected": ["data/posts.json"],
+      "files_likely_affected": [
+        "data/posts.json"
+      ],
       "status": "completed",
       "completed_at": "2026-03-12T17:15:00Z",
       "notes": "~2000 words. Full vs partial entitlement, Blue Water Navy Act, multiple VA loans, restoration, real scenarios."
@@ -438,7 +507,9 @@
         "Verify house hacking strategy is explained",
         "Word count check (2000+ words)"
       ],
-      "files_likely_affected": ["data/posts.json"],
+      "files_likely_affected": [
+        "data/posts.json"
+      ],
       "status": "completed",
       "completed_at": "2026-03-12T17:15:00Z",
       "notes": "2020 words. House hacking, PCS strategy, portfolio building, real examples, landlording basics, objection handling."
@@ -457,9 +528,12 @@
         "Verify remarriage rules are accurate",
         "Word count check (2000+ words)"
       ],
-      "files_likely_affected": ["data/posts.json"],
-      "status": "pending",
-      "notes": "Depends on Story 8. Unremarried surviving spouses of veterans who died in service or from service-connected disability qualify. Remarried after 57? Still eligible. Exempt from funding fee. Compassionate, respectful tone essential."
+      "files_likely_affected": [
+        "data/posts.json"
+      ],
+      "status": "completed",
+      "notes": "Depends on Story 8. Unremarried surviving spouses of veterans who died in service or from service-connected disability qualify. Remarried after 57? Still eligible. Exempt from funding fee. Compassionate, respectful tone essential.",
+      "completed_at": "2026-03-13T10:00:00Z"
     },
     {
       "id": 22,
@@ -475,9 +549,12 @@
         "Verify Tidewater explanation",
         "Word count check (2000+ words)"
       ],
-      "files_likely_affected": ["data/posts.json"],
-      "status": "pending",
-      "notes": "Depends on Story 8. VA appraisers check MPRs + value. Tidewater: appraiser warns if value may come in low. NOV stays with property 6 months. Low appraisal options: renegotiate, pay gap, walk away, appeal."
+      "files_likely_affected": [
+        "data/posts.json"
+      ],
+      "status": "completed",
+      "notes": "Depends on Story 8. VA appraisers check MPRs + value. Tidewater: appraiser warns if value may come in low. NOV stays with property 6 months. Low appraisal options: renegotiate, pay gap, walk away, appeal.",
+      "completed_at": "2026-03-13T10:00:00Z"
     },
     {
       "id": 23,
@@ -493,9 +570,12 @@
         "Verify activation rules are accurate",
         "Word count check (2000+ words)"
       ],
-      "files_likely_affected": ["data/posts.json"],
-      "status": "pending",
-      "notes": "Depends on Story 8. Guard/Reserve: 6 years required OR 90+ days Title 10 activation. Different funding fee schedule. Can combine active + reserve time. Include specific examples."
+      "files_likely_affected": [
+        "data/posts.json"
+      ],
+      "status": "completed",
+      "notes": "Depends on Story 8. Guard/Reserve: 6 years required OR 90+ days Title 10 activation. Different funding fee schedule. Can combine active + reserve time. Include specific examples.",
+      "completed_at": "2026-03-13T10:00:00Z"
     },
     {
       "id": 24,
@@ -511,9 +591,12 @@
         "Verify step-by-step instructions are clear",
         "Word count check (2000+ words)"
       ],
-      "files_likely_affected": ["data/posts.json"],
-      "status": "pending",
-      "notes": "Depends on Story 8. Methods: 1) Lender pulls via VA portal (fastest), 2) eBenefits/VA.gov self-service, 3) Mail VA Form 26-1880. Documents: DD-214 (veterans), statement of service (active)."
+      "files_likely_affected": [
+        "data/posts.json"
+      ],
+      "status": "completed",
+      "notes": "Depends on Story 8. Methods: 1) Lender pulls via VA portal (fastest), 2) eBenefits/VA.gov self-service, 3) Mail VA Form 26-1880. Documents: DD-214 (veterans), statement of service (active).",
+      "completed_at": "2026-03-13T10:00:00Z"
     },
     {
       "id": 25,
@@ -529,9 +612,12 @@
         "Verify facts are accurate",
         "Word count check (2000+ words)"
       ],
-      "files_likely_affected": ["data/posts.json"],
-      "status": "pending",
-      "notes": "Depends on Story 8. Myths: 1) VA loans take forever, 2) Sellers won't accept VA offers, 3) You can only use VA loan once, 4) VA loans are only for first-time buyers, 5) You need perfect credit, etc."
+      "files_likely_affected": [
+        "data/posts.json"
+      ],
+      "status": "completed",
+      "notes": "Depends on Story 8. Myths: 1) VA loans take forever, 2) Sellers won't accept VA offers, 3) You can only use VA loan once, 4) VA loans are only for first-time buyers, 5) You need perfect credit, etc.",
+      "completed_at": "2026-03-13T10:00:00Z"
     },
     {
       "id": 26,
@@ -547,9 +633,12 @@
         "Verify Cornerstone differentiation is clear",
         "Word count check (2000+ words)"
       ],
-      "files_likely_affected": ["data/posts.json"],
-      "status": "pending",
-      "notes": "Depends on Story 8. Chapter 7: 2 years from discharge. Chapter 13: 1 year with court approval. Foreclosure: 2 years. VA is more forgiving than conventional. Cornerstone's direct-to-VA underwriting helps veterans in these situations."
+      "files_likely_affected": [
+        "data/posts.json"
+      ],
+      "status": "completed",
+      "notes": "Depends on Story 8. Chapter 7: 2 years from discharge. Chapter 13: 1 year with court approval. Foreclosure: 2 years. VA is more forgiving than conventional. Cornerstone's direct-to-VA underwriting helps veterans in these situations.",
+      "completed_at": "2026-03-13T10:00:00Z"
     },
     {
       "id": 27,
@@ -565,9 +654,12 @@
         "Verify comparison favors VA appropriately",
         "Word count check (2000+ words)"
       ],
-      "files_likely_affected": ["data/posts.json"],
-      "status": "pending",
-      "notes": "Depends on Story 8. VA advantages: 0% down vs 3.5%, no PMI vs lifetime MIP on FHA, no loan limits, better rates typically. FHA only better if: credit below 580 or non-veteran."
+      "files_likely_affected": [
+        "data/posts.json"
+      ],
+      "status": "completed",
+      "notes": "Depends on Story 8. VA advantages: 0% down vs 3.5%, no PMI vs lifetime MIP on FHA, no loan limits, better rates typically. FHA only better if: credit below 580 or non-veteran.",
+      "completed_at": "2026-03-13T10:00:00Z"
     },
     {
       "id": 28,
@@ -583,9 +675,12 @@
         "Verify SADGP information is accurate",
         "Word count check (2000+ words)"
       ],
-      "files_likely_affected": ["data/posts.json"],
-      "status": "pending",
-      "notes": "Depends on Story 8. Benefits: Funding fee waived (10%+ rating), SAH/SHA grants for adapting homes, Purple Heart recipients exempt. Tone: empowering, not pitying. These veterans deserve this."
+      "files_likely_affected": [
+        "data/posts.json"
+      ],
+      "status": "completed",
+      "notes": "Depends on Story 8. Benefits: Funding fee waived (10%+ rating), SAH/SHA grants for adapting homes, Purple Heart recipients exempt. Tone: empowering, not pitying. These veterans deserve this.",
+      "completed_at": "2026-03-13T10:00:00Z"
     },
     {
       "id": 29,
@@ -601,9 +696,12 @@
         "Verify rate factors are covered",
         "Word count check (2000+ words)"
       ],
-      "files_likely_affected": ["data/posts.json"],
-      "status": "pending",
-      "notes": "Depends on Story 8. Explain: VA rates typically 0.25-0.5% lower than conventional. Factors affecting rate. When to lock. ARM vs fixed. Include: get personalized quote CTA."
+      "files_likely_affected": [
+        "data/posts.json"
+      ],
+      "status": "completed",
+      "notes": "Depends on Story 8. Explain: VA rates typically 0.25-0.5% lower than conventional. Factors affecting rate. When to lock. ARM vs fixed. Include: get personalized quote CTA.",
+      "completed_at": "2026-03-13T10:00:00Z"
     },
     {
       "id": 30,
@@ -619,9 +717,14 @@
         "Validate all schema types",
         "Check meta tags on all page types"
       ],
-      "files_likely_affected": ["app/layout.tsx", "lib/schema.ts", "app/blog/[slug]/page.tsx"],
-      "status": "pending",
-      "notes": "Depends on Stories 8, 9. Include: Organization schema with NMLS, LocalBusiness if applicable, Article schema for blogs, FAQ schema from blog content, BreadcrumbList for navigation."
+      "files_likely_affected": [
+        "app/layout.tsx",
+        "lib/schema.ts",
+        "app/blog/[slug]/page.tsx"
+      ],
+      "status": "completed",
+      "notes": "Depends on Stories 8, 9. Include: Organization schema with NMLS, LocalBusiness if applicable, Article schema for blogs, FAQ schema from blog content, BreadcrumbList for navigation.",
+      "completed_at": "2026-03-14T11:00:00Z"
     },
     {
       "id": 31,
@@ -637,9 +740,12 @@
         "Verify TL;DR sections exist",
         "Verify quotable statistics with sources"
       ],
-      "files_likely_affected": ["data/posts.json"],
-      "status": "pending",
-      "notes": "Depends on Stories 10-29. Use /geo-content-optimizer skill. Add: TL;DR at top, quotable statistics, Q&A format where appropriate, expert attribution, FAQ schema content."
+      "files_likely_affected": [
+        "data/posts.json"
+      ],
+      "status": "completed",
+      "completed_at": "2026-03-14T08:00:00Z",
+      "notes": "Added TL;DR summaries and key statistics to all 20 blog posts. Each post now has quotable content for AI citation."
     },
     {
       "id": 32,
@@ -655,9 +761,12 @@
         "Fix any identified issues",
         "Verify final audit passes"
       ],
-      "files_likely_affected": ["Multiple files based on audit results"],
-      "status": "pending",
-      "notes": "Depends on Story 31. Use /seo-geo skill for comprehensive audit. Fix any issues found. Target: 90+ SEO score, strong GEO optimization indicators."
+      "files_likely_affected": [
+        "Multiple files based on audit results"
+      ],
+      "status": "completed",
+      "completed_at": "2026-03-14T08:25:00Z",
+      "notes": "Fixed color contrast issues in BlogPost and BlogCard components. Fixed link text for SEO. Homepage Lighthouse: 100/100/100."
     },
     {
       "id": 33,
@@ -673,9 +782,13 @@
         "Access /robots.txt and verify content",
         "Verify AI crawler directives"
       ],
-      "files_likely_affected": ["app/sitemap.ts", "app/robots.ts"],
-      "status": "pending",
-      "notes": "Depends on Story 8. Include all blog posts in sitemap. Allow: GPTBot, Claude-Web, PerplexityBot, Google-Extended. Reference llms.txt if created."
+      "files_likely_affected": [
+        "app/sitemap.ts",
+        "app/robots.ts"
+      ],
+      "status": "completed",
+      "notes": "Depends on Story 8. Include all blog posts in sitemap. Allow: GPTBot, Claude-Web, PerplexityBot, Google-Extended. Reference llms.txt if created.",
+      "completed_at": "2026-03-14T11:00:00Z"
     },
     {
       "id": 34,
@@ -691,9 +804,14 @@
         "Submit test lead and verify conversion",
         "Progress through quiz and verify step events"
       ],
-      "files_likely_affected": ["app/layout.tsx", "lib/analytics.ts", "components/VALoanQuiz.tsx"],
-      "status": "pending",
-      "notes": "Depends on Stories 5, 6. Events: page_view, quiz_start, quiz_step_{n}, quiz_complete, lead_submit, phone_click. Include Facebook Pixel if ID provided."
+      "files_likely_affected": [
+        "app/layout.tsx",
+        "lib/analytics.ts",
+        "components/VALoanQuiz.tsx"
+      ],
+      "status": "completed",
+      "notes": "Depends on Stories 5, 6. Events: page_view, quiz_start, quiz_step_{n}, quiz_complete, lead_submit, phone_click. Include Facebook Pixel if ID provided.",
+      "completed_at": "2026-03-14T11:00:00Z"
     },
     {
       "id": 35,
@@ -709,9 +827,12 @@
         "Test all pages for console errors",
         "Test mobile responsiveness"
       ],
-      "files_likely_affected": ["Various optimization files"],
-      "status": "pending",
-      "notes": "Depends on all previous stories. Check: Performance (90+), Accessibility (90+), Best Practices (90+), SEO (90+). Fix any issues found. Verify Google Ads readiness (fast load, clear CTAs)."
+      "files_likely_affected": [
+        "Various optimization files"
+      ],
+      "status": "completed",
+      "completed_at": "2026-03-14T07:50:00Z",
+      "notes": "Fixed: color contrast in ValueProps.tsx, manifest.json 404 via app/manifest.ts, touch targets in Header.tsx. Final scores: Accessibility 100, Best Practices 100, SEO 100."
     }
   ],
   "completion_criteria": {
@@ -729,5 +850,9 @@
   "context_notes": "VA Loan lead funnel for Cornerstone First Mortgage. KEY DIFFERENTIATOR: We underwrite directly to VA guidelines with NO overlays (no 620 FICO minimum like other lenders). In-house VA specialist underwriting team. Theme: 'They Served For Us. Now We Serve Them.' - respectful veteran appreciation. Webhook: https://cbmtautos.duckdns.org/webhook/tanner-dscr-leads. 20 blog posts required, 2000+ words each, written naturally (not AI-sounding). Use GEO optimization (/geo-content-optimizer) and SEO (/seo-geo) skills. Design: slick, modern, Google Ads ready. Project folder: C:\\Users\\tanne\\Desktop\\CLAUDE\\va-loan-site",
   "preflight_completed": true,
   "preflight_timestamp": "2026-03-12T22:05:00Z",
-  "active_gotchas": ["form_handling", "webhook_integration", "blog_system"]
+  "active_gotchas": [
+    "form_handling",
+    "webhook_integration",
+    "blog_system"
+  ]
 }

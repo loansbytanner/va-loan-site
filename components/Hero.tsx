@@ -69,7 +69,7 @@ export default function Hero() {
                   <ChevronRight className="h-5 w-5" aria-hidden="true" />
                 </Button>
               </Link>
-              <Link href="/guide">
+              <Link href="/blog/va-loan-eligibility-requirements">
                 <Button variant="outline" size="lg" className="w-full sm:w-auto">
                   Learn About VA Loans
                 </Button>

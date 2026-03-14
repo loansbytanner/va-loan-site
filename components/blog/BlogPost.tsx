@@ -144,7 +144,7 @@ export default function BlogPost({ post }: BlogPostProps) {
           <div className="lg:flex-1 max-w-4xl">
             {/* TL;DR Box */}
             <div className="bg-cream border-l-4 border-gold-primary p-6 rounded-r-lg mb-10">
-              <h2 className="text-sm font-bold text-gold-primary uppercase tracking-wider mb-2">TL;DR</h2>
+              <h2 className="text-sm font-bold text-navy-deep uppercase tracking-wider mb-2">TL;DR</h2>
               <p className="text-navy-deep font-medium">{post.description}</p>
             </div>
 

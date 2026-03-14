@@ -22,7 +22,7 @@ export default function BlogCard({ post }: BlogCardProps) {
       </div>
 
       <div className="p-6">
-        <div className="flex items-center gap-4 text-sm text-slate-dark/60 mb-3">
+        <div className="flex items-center gap-4 text-sm text-slate-dark mb-3">
           <span>{new Date(post.publishDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
           {post.readingTime && (
             <>
@@ -41,15 +41,15 @@ export default function BlogCard({ post }: BlogCardProps) {
           </Link>
         </h3>
 
-        <p className="text-sm text-slate-dark/70 line-clamp-2 mb-4">
+        <p className="text-sm text-slate-dark line-clamp-2 mb-4">
           {post.description}
         </p>
 
         <Link
           href={`/blog/${post.slug}`}
-          className="inline-flex items-center gap-1 text-sm font-semibold text-gold-primary hover:text-gold-dark transition-colors"
+          className="inline-flex items-center gap-1 text-sm font-semibold text-navy-deep hover:text-gold-primary transition-colors"
         >
-          Read More
+          Read: {post.title.length > 40 ? post.title.substring(0, 40) + '...' : post.title}
           <ChevronRight className="h-4 w-4" aria-hidden="true" />
         </Link>
       </div>

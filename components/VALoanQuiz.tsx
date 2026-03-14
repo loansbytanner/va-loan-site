@@ -15,6 +15,7 @@ import {
   Calendar,
 } from 'lucide-react';
 import Button from './ui/Button';
+import { trackQuizStart, trackQuizStep, trackQuizComplete, trackLeadSubmit } from '@/lib/analytics';
 
 const contactSchema = z.object({
   name: z.string().min(2, 'Please enter your name'),
@@ -169,6 +170,19 @@ export default function VALoanQuiz() {
     const stepId = steps[currentStep].id;
     setAnswers((prev) => ({ ...prev, [stepId]: value }));
 
+    // Track quiz start on first selection
+    if (currentStep === 0) {
+      trackQuizStart();
+    }
+
+    // Track each step
+    trackQuizStep(currentStep + 1, stepId);
+
+    // Track quiz complete when moving to contact step
+    if (currentStep === steps.length - 1) {
+      trackQuizComplete();
+    }
+
     setTimeout(() => {
       setCurrentStep((prev) => prev + 1);
     }, 400);
@@ -209,6 +223,13 @@ export default function VALoanQuiz() {
       setSubmittedName(contactData.name.split(' ')[0]);
       setIsSubmitted(true);
       setIsSubmitting(false);
+
+      // Track lead submission
+      trackLeadSubmit({
+        loanPurpose: answers.loanPurpose,
+        state: answers.propertyState,
+        creditScore: answers.creditScore,
+      });
     } catch {
       setSubmitError('Something went wrong. Please try again or call us directly.');
       setIsSubmitting(false);

@@ -93,7 +93,7 @@ export default function ValueProps() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <span className="inline-block text-gold-primary text-sm font-semibold uppercase tracking-wider mb-3">
+          <span className="inline-block text-navy-deep text-sm font-semibold uppercase tracking-wider mb-3">
             Why Cornerstone
           </span>
           <h2 className="text-3xl font-bold text-navy-deep sm:text-4xl lg:text-5xl">
@@ -182,7 +182,7 @@ export default function ValueProps() {
             </p>
             <a
               href="/#quiz"
-              className="inline-flex items-center gap-2 text-gold-primary font-semibold hover:text-gold-dark transition-colors"
+              className="inline-flex items-center gap-2 text-navy-deep font-semibold hover:text-navy-deep/80 underline decoration-gold-primary decoration-2 underline-offset-4 transition-colors"
             >
               See if you qualify
               <span aria-hidden="true">→</span>

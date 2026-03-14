@@ -3,24 +3,23 @@ import { Phone, Mail, MapPin } from 'lucide-react';
 
 const footerLinks = {
   'VA Loan Info': [
-    { name: 'VA Loan Guide', href: '/guide' },
-    { name: 'Eligibility Requirements', href: '/eligibility' },
-    { name: 'VA Loan Rates', href: '/rates' },
+    { name: 'VA Loan Eligibility', href: '/blog/va-loan-eligibility-requirements' },
+    { name: 'Credit Score Requirements', href: '/blog/va-loan-credit-score-requirements' },
+    { name: 'VA Loan Rates', href: '/blog/va-loan-rates-market-analysis-2024' },
     { name: 'VA Funding Fee', href: '/blog/va-funding-fee-explained' },
-    { name: 'IRRRL Refinance', href: '/blog/va-irrrl-streamline-refinance' },
+    { name: 'IRRRL Refinance', href: '/blog/va-irrrl-streamline-refinance-guide' },
   ],
   'Resources': [
     { name: 'Blog', href: '/blog' },
-    { name: 'VA Loan Calculator', href: '/calculator' },
-    { name: 'Get Your COE', href: '/blog/how-to-get-coe' },
-    { name: 'FAQs', href: '/faq' },
+    { name: 'Get Your COE', href: '/blog/how-to-get-va-certificate-of-eligibility' },
+    { name: 'VA Loan Myths', href: '/blog/va-loan-myths-debunked' },
+    { name: 'Disabled Veterans', href: '/blog/va-loan-disabled-veterans-benefits' },
   ],
-  'Company': [
-    { name: 'About Us', href: '/about' },
-    { name: 'Contact', href: '/contact' },
-    { name: 'Privacy Policy', href: '/privacy' },
-    { name: 'Terms of Service', href: '/terms' },
-    { name: 'Licensing', href: '/licensing' },
+  'More Topics': [
+    { name: 'VA vs Conventional', href: '/blog/va-loan-vs-conventional-loan' },
+    { name: 'VA vs FHA', href: '/blog/va-loan-vs-fha-loan-comparison' },
+    { name: 'First-Time Buyers', href: '/blog/va-loan-first-time-homebuyers' },
+    { name: 'After Bankruptcy', href: '/blog/va-loan-after-bankruptcy-foreclosure' },
   ],
 };
 

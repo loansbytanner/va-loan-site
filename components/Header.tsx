@@ -7,10 +7,9 @@ import Button from './ui/Button';
 
 const navigation = [
   { name: 'Home', href: '/' },
-  { name: 'VA Loan Guide', href: '/guide' },
-  { name: 'Eligibility', href: '/eligibility' },
+  { name: 'VA Loan Guide', href: '/blog/va-loan-eligibility-requirements' },
+  { name: 'Eligibility', href: '/blog/how-to-get-va-certificate-of-eligibility' },
   { name: 'Blog', href: '/blog' },
-  { name: 'About', href: '/about' },
 ];
 
 export default function Header() {
@@ -35,12 +34,12 @@ export default function Header() {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex lg:items-center lg:gap-8">
+          <div className="hidden lg:flex lg:items-center lg:gap-2">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-sm font-medium text-white/80 transition-colors hover:text-gold-primary"
+                className="px-4 py-2 text-sm font-medium text-white/80 transition-colors hover:text-gold-primary"
               >
                 {item.name}
               </Link>
@@ -51,7 +50,7 @@ export default function Header() {
           <div className="hidden lg:flex lg:items-center lg:gap-4">
             <a
               href="tel:480-420-4918"
-              className="flex items-center gap-2 text-sm font-medium text-white/80 transition-colors hover:text-gold-primary"
+              className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-white/80 transition-colors hover:text-gold-primary"
             >
               <Phone className="h-4 w-4" aria-hidden="true" />
               <span>(480) 420-4918</span>
